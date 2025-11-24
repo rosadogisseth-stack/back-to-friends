@@ -15,10 +15,11 @@ label start:
     show dazai0
     with fade
 
-    chuuya "I luv u"
+    chuuya "te amo"
     chuuya "me voy"
 
     hide dazai0
     with dissolve
 
     "se acaba el juego"
+
