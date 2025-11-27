@@ -1,3 +1,5 @@
+#actualiza el código Gisseth y no olvides comentar
+
 define chuuya= Character("chuuya nakahara", color="#28e989")
 
 default jugador = Character("jugador", color="#2e2aeb")
