@@ -1,8 +1,13 @@
-#actualiza el código Gisseth y no olvides comentar
+define chuuya= Character("chuuya nakahara", color="#780F1E")
+define ranpo= Character("ranpo edogawa", color="#346a35")
+define kunikida= Character("Doppo kunikida", color= "#FFFC42")
+define yosano= Character("yosano rosado", color="#6F3181")
 
-define chuuya= Character("chuuya nakahara", color="#28e989")
+
+
 
 default jugador = Character("jugador", color="#2e2aeb")
+
 
 default ruta =""
 default nombreXD = ""
@@ -53,7 +58,7 @@ label Agencia:
 
     scene fondo2
 
-    chuuya "pendeja no dura nada"
+    kunikida "Bienvenida [nombreXD]"
 
     scene fondo1
 
@@ -61,9 +66,30 @@ label Agencia:
     show dazai0
     with fade
 
-    chuuya "te amo"
-    chuuya "me voy"
-    nombreXD "¿Y este random?"
+    kunikida "te amo"
+    kunikida"..."
+    nombreXD "muchas gracias"
+    
+    scene fondo1
+    jugador"hola kunikida"
+    kunikida "¿Quieres ir a esta mision?"
+    
+    menu:
+        "no":
+            jump pagina_mision
+            
+            label pagina_agencia:
+                scene fondo2
+                kunikida "es entendible, eres nueva asi que nos quedamos"
+            
+        "si":
+            jump pagina_agencia
+            
+            label pagina_mision:
+                scene mapa_mision
+                kunikida "[nombreXD] esto sera tu primera mision, quisiera disculparme, es inisual enviar personal sin experiencia a una mision pero estamos algo cortos de personal"
+            
+            
     hide dazai0
     with dissolve
 
@@ -76,3 +102,4 @@ label Pormafia:
 "En desarollo"
 
 return
+
