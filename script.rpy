@@ -1,11 +1,9 @@
-define chuuya= Character("chuuya nakahara", color="#780F1E")
-define ranpo= Character("ranpo edogawa", color="#346a35")
-define kunikida= Character("Doppo kunikida", color= "#FFFC42")
-define yosano= Character("yosano rosado", color="#6F3181")
+define chuuya= Character("Chuuya Nakahara", color="#780F1E")
+define Ranpo= Character("Ranpo Edogawa", color="#346a35")
+define kunikida= Character("Doppo Kunikida", color= "#FFFC42")
+define yosano= Character("Yosano Rosado", color="#6F3181")
 
-
-
-
+#inf del jugador con nombre = nombreXD
 default jugador = Character("jugador", color="#2e2aeb")
 
 
@@ -33,11 +31,13 @@ screen nombre_jugador():
             textbutton "Aceptar":
                 action Return(nombreXD)
 
+
 label start:
 
     $ nombreXD = renpy.call_screen("nombre_jugador")
 
     "Hola [nombreXD]!"
+
 
     "escoje que ruta vas a hacer"
     
@@ -46,60 +46,88 @@ label start:
             $ruta = "Agencia"
             jump Agencia
         
-        "Pormafia":
-            $ruta = "Pormafia"
-            jump Pormafia
+        "Port_mafia":
+            $ruta = "Port_mafia"
+            jump Port_mafia
 
 
 label Agencia:
-
+    scene fond_in
+    "cualquier error del codigo es culpa del gobierno"
+    "Cualquier recurso fue sacado de la serie de bungou stray dog"
+    "espero que disfruten del juego"
 
     play music "audio/kola_io.mp3"
 
     scene fondo2
 
     kunikida "Bienvenida [nombreXD]"
-
-    scene fondo1
-
-    image dazai0 = "dazai.PNG"
-    show dazai0
-    with fade
-
-    kunikida "te amo"
-    kunikida"..."
-    nombreXD "muchas gracias"
+    kunikida "Esta es la agecia aqui es donde trabajaras"
     
+
+
     scene fondo1
-    jugador"hola kunikida"
-    kunikida "¿Quieres ir a esta mision?"
+
+
+    
+    #Desde esta escena faltan sprites
+
+    scene fondo1
+
+    nombreXD"hola kunikida"
+    kunikida "Hola [nombreXD]"
+
+    kunikida "Este debe ser tu primer dia"
+    kunikida "Espero que logres acostumbrarte al lugar"
+    kunikida "Como puedes ver hay personas fuera de lo comun pero eso no significa que seas como ellos"
+    kunikida "¿En fin quieres empezar tu primera tarea?"
     
     menu:
         "no":
-            jump pagina_mision
+            jump pagina_agencia
             
             label pagina_agencia:
                 scene fondo2
-                kunikida "es entendible, eres nueva asi que nos quedamos"
+                kunikida "es entendible, eres nueva no te preocupes este trabajo no es para todos"
             
         "si":
-            jump pagina_agencia
+            jump pagina_mision
             
             label pagina_mision:
-                scene mapa_mision
-                kunikida "[nombreXD] esto sera tu primera mision, quisiera disculparme, es inisual enviar personal sin experiencia a una mision pero estamos algo cortos de personal"
-            
-            
-    hide dazai0
-    with dissolve
+
+                scene fondoag
+            #escena beta antes de añadir la historia principal para que no quede vacio
+                kunikida "[nombreXD] Muy bien primero conoce al personal este año muy poco personal se unio aun asi espero que te relaciones muy bien con las personas"
+                nombreXD "(Aun que tenia ganas de empezar una mision no queda de mas conocer a todos lo de esta agencia)"    
+                nombreXD "(probablemente mis compañeros sean agarables no lo se la verdad estoy emocionada por mi primer dia)" 
+                nombreXD "(veo alrededor del salon y noto un chico particular, es muy sonriente para trabajar en esta oficina aburrida)"
+                nombreXD "donde esta la gente no veo nadie aqui a quien voy a conocer si no hay nadie"
+                Ranpo "Quizas todos estan descansando es festivo asi que deben estar afuera"
+                nombreXD "¿Que hacen aqui?"
+                Ranpo "¿Que kunikida no te explico? somos una agencia de detectives nos encargamos de casos dificiles y proteger a las personas"
+                Ranpo "Soy Ranpo Edogawa tu debes ser [nombreXD]"
+                nombreXD "como rayos lo sup..."
+                Ranpo "Por que puedo leer tu mente ¡JAJAJAJAJA!"
+                Ranpo "es chiste kunikida me conto y por tu comportamiento perdido es obvio que eres nueva"
+                nombreXD "Que chiste raro en fin un gusto ¿hay alguien mas al que deba conocer?"
+                Ranpo "No hay nadie mas que aqui con podria ser Dazai pero el desaparecio hace unos Dias"
+                Ranpo "no te preocupes por el debe estar bien"
+                nombreXD "(Que poco interes tiene parece que no le importa mucho)"
+                nombreXD "esta bien entonces ¿que debemos hacer?"
+                Ranpo "No te preocupes kunikida esta buscando a atsushi el es nuevo pero es agradble tenerlo cerca deberias conocerlo"
+                Ranpo "aunque no lo hemos visto desde un tiempo por eso kunikida lo esta buscando"
+                nombreXD "se nota que este es un trabajo muy problematico"
+                nombreXD "no te preocupes esta agencia de hecho es bastante relajante"
+
 
     "se acaba el juego"
     "XD"
 return 
 
-label Pormafia:
+label Port_mafia:
     
 "En desarollo"
 
 return
+
 
